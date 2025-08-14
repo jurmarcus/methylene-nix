@@ -1,0 +1,32 @@
+[
+  "chatgpt"
+  "iina"
+  "1password-cli"
+  "1password"
+  "anki"
+  "appcleaner"
+  "brainfm"
+  "brave-browser"
+  "chatgpt"
+  "deepl"
+  "discord"
+  "elgato-camera-hub"
+  "elgato-stream-deck"
+  "elgato-wave-link"
+  "firefox@beta"
+  "floorp"
+  "ghostty"
+  "google-chrome"
+  "jordanbaird-ice"
+  "lm-studio"
+  "localsend"
+  "obsidian"
+  "phoenix-slides"
+  "pocket-casts"
+  "raycast"
+  "tourbox-console"
+  "visual-studio-code"
+  # Helicon Focus (manual .dmg)
+  # Capture One (manual .dmg)
+  # JPEGMini Pro (manual .dmg)
+]

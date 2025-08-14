@@ -1,0 +1,6 @@
+[
+  "fish"
+  "mas"
+  "neovim"
+  "tmux"
+]

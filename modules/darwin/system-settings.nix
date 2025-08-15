@@ -8,5 +8,9 @@
         orientation = "left";
       };
     };
+    keyboard = {
+      enableKeyMapping = true;
+      remapCapsLockToControl = true;
+    };
   };
 }

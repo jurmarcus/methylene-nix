@@ -14,6 +14,8 @@
   environment.shells = [ pkgs.fish ];
   environment.variables.EDITOR = "nvim";
 
+  security.pam.services.sudo_local.touchIdAuth = true;
+
   nix-homebrew = {
     enable = true;
     enableRosetta = true;

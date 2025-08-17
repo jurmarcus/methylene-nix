@@ -5,7 +5,7 @@
 
   config = lib.mkIf config.my.homebrew.bundles.entertainment.enable {
     my.homebrew.features = {
-      media.enable = true;
+      entertainment.enable = true;
     };
   };
 }

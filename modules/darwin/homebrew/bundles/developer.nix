@@ -5,7 +5,7 @@
 
   config = lib.mkIf config.my.homebrew.bundles.developer.enable {
     my.homebrew.features = {
-      dev.enable = true;
+      developer.enable = true;
     };
   };
 }

@@ -26,6 +26,7 @@
   "raycast"
   "tourbox-console"
   "visual-studio-code"
+  "orion"
   # Helicon Focus (manual .dmg)
   # Capture One (manual .dmg)
   # JPEGMini Pro (manual .dmg)

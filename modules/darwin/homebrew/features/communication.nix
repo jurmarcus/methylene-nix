@@ -7,8 +7,8 @@ in {
     homebrew.casks = [
         "discord"
     ];
-    homebrew.masApps = [
+    homebrew.masApps = {
         "Line" = 539883307;
-    ];
+    };
   };
 }

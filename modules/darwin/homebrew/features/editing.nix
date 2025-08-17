@@ -7,8 +7,8 @@ in {
     homebrew.casks = [
         "phoenix-slides"
     ];
-    homebrew.masApps = [
+    homebrew.masApps = {
         "Photomator" = 1444636541;
-    ];
+    };
   };
 }

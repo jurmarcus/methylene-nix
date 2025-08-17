@@ -10,6 +10,7 @@
     ./features/entertainment.nix
     ./features/security.nix
     ./features/utilities.nix
+    ./features/editing.nix
 
     # Bundles
     ./bundles/desktop.nix

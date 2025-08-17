@@ -9,6 +9,6 @@ in {
     ];
     homebrew.masApps = [
         "Line" = 539883307;
-    ]
+    ];
   };
 }

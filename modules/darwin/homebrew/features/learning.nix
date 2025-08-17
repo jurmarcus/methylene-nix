@@ -5,10 +5,10 @@ in {
     lib.mkEnableOption "Learning (Homebrew casks)";
   config = lib.mkIf cfg.enable {
     homebrew.casks = [
-        "anki"
-        "obsidian"
-        "deepl"
-        "chatgpt"
+      "anki"
+      "obsidian"
+      "deepl"
+      "chatgpt"
     ];
   };
 }

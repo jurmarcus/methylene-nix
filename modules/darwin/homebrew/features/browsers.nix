@@ -5,9 +5,9 @@ in {
     lib.mkEnableOption "Web browsers (Homebrew casks)";
   config = lib.mkIf cfg.enable {
     homebrew.casks = [ 
-        "floorp"
-        "orion"
-        "google-chrome"
+      "floorp"
+      "orion"
+      "google-chrome"
     ];
   };
 }

@@ -4,7 +4,6 @@
     ./system-settings.nix
     ./homebrew
 
-    inputs.mac-app-util.darwinModules.default
     inputs.nix-homebrew.darwinModules.nix-homebrew
   ];
 

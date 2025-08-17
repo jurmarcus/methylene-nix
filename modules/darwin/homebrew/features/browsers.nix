@@ -7,7 +7,6 @@ in {
     homebrew.casks = [ 
       "floorp"
       "orion"
-      "google-chrome"
     ];
   };
 }

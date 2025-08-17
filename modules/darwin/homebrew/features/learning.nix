@@ -9,6 +9,7 @@ in {
       "obsidian"
       "deepl"
       "chatgpt"
+      "google-chrome"
     ];
   };
 }

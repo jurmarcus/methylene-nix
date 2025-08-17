@@ -1,21 +1,36 @@
-{ lib, ... }:
-let
-  brews  = import ./brews.nix;
-  casks  = import ./casks.nix;
-  mas    = import ./mas.nix;
-in
+{ config, lib, ... }:
 {
-  homebrew = {
-    enable  = true;
+  imports = [
+    # Features
+    ./features/browsers.nix
+    ./features/communication.nix
+    ./features/developer.nix
+    ./features/hardware.nix
+    ./features/learning.nix
+    ./features/entertainment.nix
+    ./features/security.nix
+    ./features/utilities.nix
 
-    brews   = brews;
-    casks   = casks;
-    masApps = mas;
+    # Bundles
+    ./bundles/desktop.nix
+    ./bundles/developer.nix
+    ./bundles/entertainment.nix
+    ./bundles/learning.nix
+    ./bundles/standard.nix
+  ];
 
-    onActivation = {
-      cleanup    = "zap";
-      autoUpdate = true;
-      upgrade    = true;
+  config = {
+    homebrew = {
+      enable = true;
+      brews   = [ ];
+      casks   = [ ];
+      masApps = { };
+
+      onActivation = {
+        cleanup    = "zap";
+        autoUpdate = true;
+        upgrade    = true;
+      };
     };
   };
 }

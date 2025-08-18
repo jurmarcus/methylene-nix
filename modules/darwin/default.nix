@@ -1,4 +1,9 @@
-{ pkgs, inputs, config, ... }:
+{
+  pkgs,
+  inputs,
+  config,
+  ...
+}:
 {
   imports = [
     ./primary-user.nix
@@ -18,7 +23,10 @@
 
   security.pam.services.sudo_local.touchIdAuth = true;
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
   nix-homebrew = {
     enable = true;
     user = config.my.primaryUser;

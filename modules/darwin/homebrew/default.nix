@@ -26,14 +26,14 @@
   config = {
     homebrew = {
       enable = true;
-      brews   = [ ];
-      casks   = [ ];
+      brews = [ ];
+      casks = [ ];
       masApps = { };
 
       onActivation = {
-        cleanup    = "zap";
+        cleanup = "zap";
         autoUpdate = true;
-        upgrade    = true;
+        upgrade = true;
       };
     };
   };

@@ -15,36 +15,49 @@
     agenix.url = "github:ryantm/agenix";
   };
 
-  outputs = inputs@{ self, nixpkgs, nix-darwin, agenix, ... }:
-  let
-    system = "aarch64-darwin";
-    pkgs = nixpkgs.legacyPackages.${system};
+  outputs =
+    inputs@{
+      self,
+      nixpkgs,
+      nix-darwin,
+      agenix,
+      ...
+    }:
+    let
+      system = "aarch64-darwin";
+      pkgs = nixpkgs.legacyPackages.${system};
 
-    hostDirs = builtins.attrNames (builtins.readDir ./hosts);
+      hostDirs = builtins.attrNames (builtins.readDir ./hosts);
 
-    mkDarwinHost = hostName:
-      nix-darwin.lib.darwinSystem {
-        inherit system;
-        specialArgs = {
-          inherit inputs system;
+      mkDarwinHost =
+        hostName:
+        nix-darwin.lib.darwinSystem {
+          inherit system;
+          specialArgs = {
+            inherit inputs system;
+          };
+          modules = [
+            { networking.hostName = hostName; }
+            ./hosts/${hostName}
+            ./modules/darwin
+            ./modules/home-manager
+            { system.configurationRevision = self.rev or self.dirtyRev or null; }
+          ];
         };
-        modules = [
-          { networking.hostName = hostName; }
-          ./hosts/${hostName}
-          ./modules/darwin
-          ./modules/home-manager
-          { system.configurationRevision = self.rev or self.dirtyRev or null; }
-        ];
+
+      darwinCfgs = builtins.listToAttrs (
+        map (hn: {
+          name = hn;
+          value = mkDarwinHost hn;
+        }) hostDirs
+      );
+    in
+    {
+      darwinConfigurations = darwinCfgs;
+
+      formatter.${system} = pkgs.nixfmt;
+      devShells.${system}.default = pkgs.mkShell {
+        buildInputs = [ pkgs.nixfmt ];
       };
-
-    darwinCfgs = builtins.listToAttrs (map (hn: { name = hn; value = mkDarwinHost hn; }) hostDirs);
-  in
-  {
-    darwinConfigurations = darwinCfgs;
-
-    formatter.${system} = pkgs.nixfmt;
-    devShells.${system}.default = pkgs.mkShell {
-      buildInputs = [ pkgs.nixfmt ];
     };
-  };
 }

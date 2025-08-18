@@ -8,7 +8,6 @@ in {
       "anki"
       "obsidian"
       "deepl"
-      "chatgpt"
       "google-chrome"
     ];
   };

@@ -6,6 +6,7 @@ in {
   config = lib.mkIf cfg.enable {
     homebrew.casks = [
       "lm-studio"
+      "chatgpt"
     ];
   };
 }

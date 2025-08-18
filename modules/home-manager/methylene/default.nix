@@ -3,16 +3,13 @@ let
   keyPath = "${config.home.homeDirectory}/.ssh/github";
 in
 {
+  imports = [ 
+    ../fish.nix 
+  ];
+
   home = {
     stateVersion = "24.05";
     packages = [ pkgs.git ];
-  }
-
-  programs.fish = {
-    enable = true;
-    shellAbbrs = {
-      drs = "sudo darwin-rebuild switch --flake ~/Code/methylene-nix";
-    };
   };
 
   programs.git = {

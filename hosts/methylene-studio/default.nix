@@ -5,6 +5,7 @@
   ];
 
   users.users.${primaryUser} = {
+    name = "${primaryUser}";
     home = "/Users/${primaryUser}";
     shell = pkgs.fish;
   };

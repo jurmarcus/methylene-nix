@@ -5,6 +5,7 @@ in
 {
   home.stateVersion = "24.05";
 
+  programs.fish.enable = true;
   programs.ssh = {
     enable = true;
 

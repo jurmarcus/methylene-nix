@@ -7,14 +7,14 @@
     inputs.nix-homebrew.darwinModules.nix-homebrew
   ];
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
-  programs.fish.enable = true;
   environment.shells = [ pkgs.fish ];
   environment.variables.EDITOR = "nvim";
 
+  programs.fish.enable = true;
+
   security.pam.services.sudo_local.touchIdAuth = true;
 
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nix-homebrew = {
     enable = true;
     enableRosetta = true;

@@ -6,6 +6,13 @@ in
   home.stateVersion = "24.05";
 
   programs.fish.enable = true;
+
+  programs.git = {
+    enable = true;
+    userName = "Jurmarcus Allen";
+    userEmail = "me@jurmarcus.com";
+  };
+
   programs.ssh = {
     enable = true;
 

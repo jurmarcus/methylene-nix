@@ -3,7 +3,10 @@ let
   keyPath = "${config.home.homeDirectory}/.ssh/github";
 in
 {
-  home.stateVersion = "24.05";
+  home = {
+    stateVersion = "24.05";
+    packages = [ pkgs.git ];
+  }
 
   programs.fish = {
     enable = true;
@@ -48,6 +51,4 @@ in
         /usr/bin/ssh-add --apple-use-keychain "${keyPath}" >/dev/null 2>&1 || true
       fi
     '';
-
-  home.packages = [ pkgs.git ];
 }

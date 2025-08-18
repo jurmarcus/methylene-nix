@@ -1,0 +1,33 @@
+# macOS system files
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Editor and IDE files
+.idea/
+.vscode/
+*.swp
+*.swo
+*.sublime-*
+
+# Nix build outputs
+result
+result-*
+*.drv
+*.lock
+
+# direnv
+.direnv/
+.envrc
+
+# Logs
+*.log
+
+# Other common ignores
+*.tmp
+*.bak

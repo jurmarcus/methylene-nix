@@ -7,6 +7,7 @@
     my.homebrew.features = {
       security.enable = true;
       browsers.enable = true;
+      utilities.enable = true;
     };
   };
 }

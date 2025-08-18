@@ -7,7 +7,6 @@
     my.homebrew.features = {
       communication.enable  = true;
       hardware.enable = true;
-      utilities.enable = true;
       editing.enable = true;
     };
   };

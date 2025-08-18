@@ -13,7 +13,6 @@ in {
     homebrew.casks = [
       "ghostty"
       "visual-studio-code"
-      "lm-studio"
     ];
   };
 }

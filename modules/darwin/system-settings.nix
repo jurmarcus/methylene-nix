@@ -1,7 +1,7 @@
-{ pkgs, lib, primaryUser, ... }:
+{ pkgs, lib, config, ... }:
 {
   system = {
-    primaryUser = "${primaryUser}";
+    primaryUser = "${config.my.primaryUser}";
     defaults = {
       dock = {
         autohide = true;

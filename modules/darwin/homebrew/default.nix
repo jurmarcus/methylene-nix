@@ -5,6 +5,7 @@
     ./features/browsers.nix
     ./features/communication.nix
     ./features/developer.nix
+    ./features/editing.nix
     ./features/editors.nix
     ./features/hardware.nix
     ./features/learning.nix
@@ -12,12 +13,12 @@
     ./features/entertainment.nix
     ./features/security.nix
     ./features/utilities.nix
-    ./features/editing.nix
 
     # Bundles
     ./bundles/llm.nix
     ./bundles/desktop.nix
     ./bundles/developer.nix
+    ./bundles/editing.nix
     ./bundles/editors.nix
     ./bundles/entertainment.nix
     ./bundles/learning.nix

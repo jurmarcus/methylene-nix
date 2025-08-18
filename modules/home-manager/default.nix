@@ -7,5 +7,5 @@
   home-manager.useGlobalPkgs = true;
   home-manager.useUserPackages = true;
 
-  home-manager.users.${config.my.primaryUser} = import ./${primaryUser};
+  home-manager.users.${config.my.primaryUser} = import ./${config.my.primaryUser};
 }

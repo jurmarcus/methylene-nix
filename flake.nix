@@ -11,11 +11,14 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     nix-homebrew.url = "github:zhaofengli/nix-homebrew";
+
+    agenix.url = "github:ryantm/agenix";
   };
 
-  outputs = inputs@{ self, nix-darwin, ... }:
+  outputs = inputs@{ self, nixpkgs, nix-darwin, agenix, ... }:
   let
     system = "aarch64-darwin";
+    pkgs = nixpkgs.legacyPackages.${system};
 
     hostDirs = builtins.attrNames (builtins.readDir ./hosts);
 
@@ -30,7 +33,6 @@
           ./hosts/${hostName}
           ./modules/darwin
           ./modules/home-manager
-
           { system.configurationRevision = self.rev or self.dirtyRev or null; }
         ];
       };
@@ -39,5 +41,10 @@
   in
   {
     darwinConfigurations = darwinCfgs;
+
+    formatter.${system} = pkgs.nixfmt;
+    devShells.${system}.default = pkgs.mkShell {
+      buildInputs = [ pkgs.nixfmt ];
+    };
   };
 }

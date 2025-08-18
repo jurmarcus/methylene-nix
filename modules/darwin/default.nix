@@ -10,6 +10,9 @@
 
   environment.variables.EDITOR = "nvim";
   environment.shells = [ pkgs.fish ];
+  environment.systemPackages = with pkgs; [
+    nixfmt
+  ];
   programs.fish.enable = true;
   # sudo chsh -s /run/current-system/sw/bin/fish $USER
 

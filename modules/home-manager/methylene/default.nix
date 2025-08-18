@@ -9,7 +9,10 @@ in
 
   home = {
     stateVersion = "24.05";
-    packages = [ pkgs.git ];
+    packages =  with pkgs; [ 
+      git
+      nixfmt
+    ];
   };
 
   programs.git = {

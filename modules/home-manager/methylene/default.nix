@@ -5,7 +5,12 @@ in
 {
   home.stateVersion = "24.05";
 
-  programs.fish.enable = true;
+  programs.fish = {
+    enable = true;
+    shellAbbrs = {
+      drs = "sudo darwin-rebuild switch --flake ~/Code/methylene-nix";
+    };
+  };
 
   programs.git = {
     enable = true;

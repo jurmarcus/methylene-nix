@@ -11,6 +11,7 @@
     ./homebrew
 
     inputs.nix-homebrew.darwinModules.nix-homebrew
+    inputs.agenix.darwinModules.default
   ];
 
   environment.variables.EDITOR = "nvim";

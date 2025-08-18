@@ -41,6 +41,7 @@
             ./hosts/${hostName}
             ./modules/darwin
             ./modules/home-manager
+            { environment.systemPackages = [ agenix.packages.${system}.default ]; }
             { system.configurationRevision = self.rev or self.dirtyRev or null; }
           ];
         };

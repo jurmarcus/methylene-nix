@@ -2,6 +2,7 @@
 {
   imports = [
     inputs.home-manager.darwinModules.home-manager
+    inputs.agenix.homeManagerModules.default
   ];
 
   home-manager.useGlobalPkgs = true;

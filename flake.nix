@@ -24,7 +24,6 @@
         inherit system;
         specialArgs = {
           inherit inputs system;
-          primaryUser = "methylene";
         };
         modules = [
           { networking.hostName = hostName; }

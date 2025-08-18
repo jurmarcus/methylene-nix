@@ -1,6 +1,7 @@
-{ pkgs, inputs, primaryUser, ... }:
+{ pkgs, inputs, ... }:
 {
   imports = [
+    ./primary-user.nix
     ./system-settings.nix
     ./homebrew
 
@@ -18,6 +19,6 @@
   nix-homebrew = {
     enable = true;
     enableRosetta = true;
-    user = primaryUser;
+    user = config.my.primaryUser;
   };
 }

@@ -1,12 +1,14 @@
-{ pkgs, primaryUser, ... }:
+{ pkgs, config, ... }:
 {
   imports = [
     ./homebrew.nix
   ];
 
+  my.primaryUser = "methylene";
+
   users.users.${primaryUser} = {
-    name = "${primaryUser}";
-    home = "/Users/${primaryUser}";
+    name = "${config.my.primaryUser}";
+    home = "/Users/${config.my.primaryUser}";
     shell = pkgs.fish;
   };
 

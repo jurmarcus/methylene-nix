@@ -21,6 +21,3 @@
     user = config.my.primaryUser;
   };
 }
-
-# this is a change
-# this is the second change

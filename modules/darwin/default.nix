@@ -8,10 +8,10 @@
     inputs.nix-homebrew.darwinModules.nix-homebrew
   ];
 
-  environment.shells = [ pkgs.fish ];
   environment.variables.EDITOR = "nvim";
-
+  environment.shells = [ pkgs.fish ];
   programs.fish.enable = true;
+  # sudo chsh -s /run/current-system/sw/bin/fish $USER
 
   security.pam.services.sudo_local.touchIdAuth = true;
 

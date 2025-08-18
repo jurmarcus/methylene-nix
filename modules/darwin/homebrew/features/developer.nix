@@ -8,11 +8,11 @@ in {
       "fish"
       "mas"
       "neovim"
+      "sapling"
       "tmux"
     ];
     homebrew.casks = [
       "ghostty"
-      "visual-studio-code"
     ];
   };
 }

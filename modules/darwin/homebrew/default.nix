@@ -2,12 +2,13 @@
 {
   imports = [
     # Features
-    ./features/llm.nix
     ./features/browsers.nix
     ./features/communication.nix
     ./features/developer.nix
+    ./features/editors.nix
     ./features/hardware.nix
     ./features/learning.nix
+    ./features/llm.nix
     ./features/entertainment.nix
     ./features/security.nix
     ./features/utilities.nix
@@ -17,6 +18,7 @@
     ./bundles/llm.nix
     ./bundles/desktop.nix
     ./bundles/developer.nix
+    ./bundles/editors.nix
     ./bundles/entertainment.nix
     ./bundles/learning.nix
     ./bundles/standard.nix

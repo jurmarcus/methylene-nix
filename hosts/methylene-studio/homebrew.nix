@@ -1,7 +1,7 @@
 { lib, ... }:
 {
   my.homebrew.bundles = {
-    # ai.enable = true;
+    llm.enable = true;
     desktop.enable = true;
     developer.enable = true;
     entertainment.enable = true;

@@ -7,7 +7,6 @@ in
   config = lib.mkIf cfg.enable {
     homebrew.casks = [
       "anki"
-      "obsidian"
       "google-chrome"
     ];
   };

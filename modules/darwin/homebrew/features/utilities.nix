@@ -12,6 +12,7 @@ in
       "jordanbaird-ice"
       "localsend"
       "raycast"
+      "obsidian"
       "phoenix-slides"
       "the-unarchiver"
     ];

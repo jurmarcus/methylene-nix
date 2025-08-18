@@ -7,7 +7,6 @@
     editors.enable = true;
     entertainment.enable = true;
     learning.enable = true;
-    llm.enable = true;
     standard.enable = true;
   };
 }

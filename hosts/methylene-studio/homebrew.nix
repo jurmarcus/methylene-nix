@@ -1,7 +1,6 @@
 { lib, ... }:
 {
   my.homebrew.bundles = {
-    llm.enable = true;
     desktop.enable = true;
     developer.enable = true;
     editors.enable = true;
@@ -10,7 +9,15 @@
     standard.enable = true;
   };
 
+  homebrew.casks = lib.mkMerge [
+    [
+      "lm-studio"
+    ]
+  ];
+
   homebrew.masApps = lib.mkMerge [
-    { "Xcode" = 497799835; }
+    { 
+      "Xcode" = 497799835; 
+    }
   ];
 }

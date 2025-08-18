@@ -7,15 +7,13 @@
     ./features/developer.nix
     ./features/editing.nix
     ./features/editors.nix
+    ./features/entertainment.nix
     ./features/hardware.nix
     ./features/learning.nix
-    ./features/llm.nix
-    ./features/entertainment.nix
     ./features/security.nix
     ./features/utilities.nix
 
     # Bundles
-    ./bundles/llm.nix
     ./bundles/desktop.nix
     ./bundles/developer.nix
     ./bundles/editing.nix

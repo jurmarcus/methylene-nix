@@ -4,11 +4,8 @@ in {
   options.my.homebrew.features.editing.enable =
     lib.mkEnableOption "Editing (Homebrew casks)";
   config = lib.mkIf cfg.enable {
-    homebrew.casks = [
-        "phoenix-slides"
-    ];
     homebrew.masApps = {
-        "Photomator" = 1444636541;
+      "Photomator" = 1444636541;
     };
   };
 }

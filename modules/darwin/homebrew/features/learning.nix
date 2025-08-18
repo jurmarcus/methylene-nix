@@ -7,7 +7,6 @@ in {
     homebrew.casks = [
       "anki"
       "obsidian"
-      "deepl"
       "google-chrome"
     ];
   };

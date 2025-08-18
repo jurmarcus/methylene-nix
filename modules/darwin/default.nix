@@ -18,7 +18,6 @@
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nix-homebrew = {
     enable = true;
-    enableRosetta = true;
     user = config.my.primaryUser;
   };
 }

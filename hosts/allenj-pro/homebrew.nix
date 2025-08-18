@@ -7,8 +7,4 @@
     learning.enable = true;
     standard.enable = true;
   };
-
-  homebrew.masApps = lib.mkMerge [
-    { "Xcode" = 497799835; }
-  ];
 }

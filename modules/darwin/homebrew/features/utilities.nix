@@ -5,11 +5,14 @@ in {
     lib.mkEnableOption "Utilities (Homebrew casks)";
   config = lib.mkIf cfg.enable {
     homebrew.casks = [
-      "raycast"
       "appcleaner"
-      "the-unarchiver"
-      "localsend"
+      "chatgpt"
+      "deepl"
       "jordanbaird-ice"
+      "localsend"
+      "raycast"
+      "phoenix-slides"
+      "the-unarchiver"
     ];
   };
 }

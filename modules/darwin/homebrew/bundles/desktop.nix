@@ -5,7 +5,7 @@
 
   config = lib.mkIf config.my.homebrew.bundles.desktop.enable {
     my.homebrew.features = {
-      communication.enable  = true;
+      communication.enable = true;
       hardware.enable = true;
       editing.enable = true;
     };

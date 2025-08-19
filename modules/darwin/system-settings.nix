@@ -17,5 +17,8 @@
       enableKeyMapping = true;
       remapCapsLockToControl = true;
     };
+    activationScripts.activateSymbolicHotKeys.text = ''
+      /System/Library/PrivateFrameworks/SystemAdministration.framework/Resources/activateSettings -u
+    '';
   };
 }

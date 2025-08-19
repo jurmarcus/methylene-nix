@@ -7,6 +7,7 @@
 {
   imports = [
     ./primary-user.nix
+    ./system-keybinds.nix
     ./system-settings.nix
     ./homebrew
 
@@ -19,6 +20,7 @@
   environment.systemPackages = with pkgs; [
     nixfmt
   ];
+
   programs.fish.enable = true;
   # sudo chsh -s /run/current-system/sw/bin/fish $USER
 
@@ -28,6 +30,7 @@
     "nix-command"
     "flakes"
   ];
+
   nix-homebrew = {
     enable = true;
     user = config.my.primaryUser;

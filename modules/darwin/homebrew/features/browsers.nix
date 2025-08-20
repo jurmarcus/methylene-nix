@@ -7,6 +7,7 @@ in
   config = lib.mkIf cfg.enable {
     homebrew.casks = [
       "floorp"
+      "google-chrome"
       "orion"
     ];
   };

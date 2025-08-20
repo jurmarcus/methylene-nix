@@ -5,6 +5,7 @@
     developer.enable = true;
     editors.enable = true;
     entertainment.enable = true;
+    gaming.enable = true;
     learning.enable = true;
     photography.enable = true;
     standard.enable = true;

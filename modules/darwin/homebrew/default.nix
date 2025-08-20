@@ -7,6 +7,7 @@
     ./features/developer.nix
     ./features/editors.nix
     ./features/entertainment.nix
+    ./features/gaming.nix
     ./features/hardware.nix
     ./features/learning.nix
     ./features/photography.nix
@@ -18,6 +19,7 @@
     ./bundles/developer.nix
     ./bundles/editors.nix
     ./bundles/entertainment.nix
+    ./bundles/gaming.nix
     ./bundles/learning.nix
     ./bundles/photography.nix
     ./bundles/standard.nix

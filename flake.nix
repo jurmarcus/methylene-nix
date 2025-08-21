@@ -1,17 +1,9 @@
 {
-  description = "methylene nix-darwin (modular, multi-host, macOS only)";
+  description = "methylene nix-darwin (Apple Silicon)";
 
   inputs = {
     nixpkgs = {
       url = "github:NixOS/nixpkgs/nixpkgs-unstable";
-    };
-
-    nix-homebrew = {
-      url = "github:zhaofengli/nix-homebrew";
-    };
-
-    agenix = {
-      url = "github:ryantm/agenix";
     };
 
     nix-darwin = {
@@ -24,11 +16,18 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nix-homebrew = {
+      url = "github:zhaofengli/nix-homebrew";
+    };
+
+    agenix = {
+      url = "github:ryantm/agenix";
+    };
+
     nix4nvchad = {
       url = "github:nix-community/nix4nvchad";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
   };
 
   outputs =
@@ -36,41 +35,36 @@
       self,
       nixpkgs,
       nix-darwin,
-      agenix,
       ...
     }:
     let
       system = "aarch64-darwin";
-      pkgs = nixpkgs.legacyPackages.${system};
+      lib = nixpkgs.lib;
+      pkgs = import nixpkgs { inherit system; };
 
-      hostDirs = builtins.attrNames (builtins.readDir ./hosts);
+      hostNames = lib.attrNames (lib.filterAttrs (_: t: t == "directory") (builtins.readDir ./hosts));
 
       mkDarwinHost =
         hostName:
         nix-darwin.lib.darwinSystem {
           inherit system;
-          specialArgs = {
-            inherit inputs system;
-          };
+          specialArgs = { inherit inputs system; };
           modules = [
             { networking.hostName = hostName; }
-            ./hosts/${hostName}
             ./modules/darwin
             ./modules/home-manager
-            { environment.systemPackages = [ agenix.packages.${system}.default ]; }
+            ./hosts/${hostName}
             { system.configurationRevision = self.rev or self.dirtyRev or null; }
           ];
         };
-
-      darwinCfgs = builtins.listToAttrs (
+    in
+    {
+      darwinConfigurations = lib.listToAttrs (
         map (hn: {
           name = hn;
           value = mkDarwinHost hn;
-        }) hostDirs
+        }) hostNames
       );
-    in
-    {
-      darwinConfigurations = darwinCfgs;
 
       formatter.${system} = pkgs.nixfmt;
       devShells.${system}.default = pkgs.mkShell {

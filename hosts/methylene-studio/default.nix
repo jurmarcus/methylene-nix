@@ -1,16 +1,32 @@
-{ pkgs, config, ... }:
 {
-  imports = [
-    ./homebrew.nix
-  ];
-
+  pkgs,
+  config,
+  lib,
+  ...
+}:
+{
   my.primaryUser = "methylene";
 
-  users.users.${config.my.primaryUser} = {
-    name = "${config.my.primaryUser}";
-    home = "/Users/${config.my.primaryUser}";
-    shell = pkgs.fish;
+  my.homebrew.bundles = {
+    desktop.enable = true;
+    developer.enable = true;
+    editors.enable = true;
+    entertainment.enable = true;
+    gaming.enable = true;
+    learning.enable = true;
+    photography.enable = true;
+    standard.enable = true;
   };
 
-  system.stateVersion = 6;
+  homebrew.casks = lib.mkMerge [
+    [
+      "lm-studio"
+    ]
+  ];
+
+  homebrew.masApps = lib.mkMerge [
+    {
+      "Xcode" = 497799835;
+    }
+  ];
 }

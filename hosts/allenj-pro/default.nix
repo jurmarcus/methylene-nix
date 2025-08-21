@@ -1,16 +1,16 @@
-{ pkgs, config, ... }:
 {
-  imports = [
-    ./homebrew.nix
-  ];
-
+  pkgs,
+  config,
+  lib,
+  ...
+}:
+{
   my.primaryUser = "allenj";
 
-  users.users.${config.my.primaryUser} = {
-    name = "${config.my.primaryUser}";
-    home = "/Users/${config.my.primaryUser}";
-    shell = pkgs.fish;
+  my.homebrew.bundles = {
+    desktop.enable = true;
+    developer.enable = true;
+    entertainment.enable = true;
+    standard.enable = true;
   };
-
-  system.stateVersion = 6;
 }

@@ -1,5 +1,4 @@
 {
-  inputs,
   config,
   lib,
   pkgs,
@@ -9,18 +8,7 @@ let
   keyPath = "${config.home.homeDirectory}/.ssh/github";
 in
 {
-  imports = [
-    ../fish.nix
-    inputs.nix4nvchad.homeManagerModules.default
-  ];
-
-  home = {
-    stateVersion = "24.05";
-    packages = with pkgs; [
-      git
-      nixfmt
-    ];
-  };
+  home.stateVersion = "24.05";
 
   programs.git = {
     enable = true;
@@ -44,11 +32,6 @@ in
         identitiesOnly = true;
       };
     };
-  };
-
-  programs.nvchad = {
-    enable = true;
-    neovim = pkgs.neovim;
   };
 
   home.activation.ensureSshDir = lib.hm.dag.entryBefore [ "writeBoundary" ] ''

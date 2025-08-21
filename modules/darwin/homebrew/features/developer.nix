@@ -12,6 +12,7 @@ in
       "neovim"
       "sapling"
       "tmux"
+      "uv"
     ];
     homebrew.casks = [
       "ghostty"

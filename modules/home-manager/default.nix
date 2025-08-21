@@ -4,12 +4,17 @@
     inputs.home-manager.darwinModules.home-manager
   ];
 
-  home-manager.useGlobalPkgs = true;
-  home-manager.useUserPackages = true;
+  home-manager = {
+    useGlobalPkgs = true;
+    useUserPackages = true;
 
-  home-manager.sharedModules = [
-    inputs.agenix.homeManagerModules.default
-  ];
+    extraSpecialArgs = { inherit inputs; };
 
-  home-manager.users.${config.my.primaryUser} = import ./${config.my.primaryUser};
+    users.${config.my.primaryUser} = import ./${config.my.primaryUser};
+
+    sharedModules = [
+      inputs.agenix.homeManagerModules.default
+    ];
+  };
+
 }

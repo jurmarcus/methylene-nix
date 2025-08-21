@@ -1,4 +1,5 @@
 {
+  inputs,
   config,
   lib,
   pkgs,
@@ -10,6 +11,7 @@ in
 {
   imports = [
     ../fish.nix
+    inputs.nix4nvchad.homeManagerModules.default
   ];
 
   home = {
@@ -42,6 +44,11 @@ in
         identitiesOnly = true;
       };
     };
+  };
+
+  programs.nvchad = {
+    enable = true;
+    neovim = pkgs.neovim;
   };
 
   home.activation.ensureSshDir = lib.hm.dag.entryBefore [ "writeBoundary" ] ''

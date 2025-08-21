@@ -68,7 +68,12 @@
 
       formatter.${system} = pkgs.nixfmt;
       devShells.${system}.default = pkgs.mkShell {
-        buildInputs = [ pkgs.nixfmt ];
+        buildInputs = [
+          pkgs.nixfmt-rfc-style
+          pkgs.statix
+          pkgs.deadnix
+          pkgs.nixd
+        ];
       };
     };
 }

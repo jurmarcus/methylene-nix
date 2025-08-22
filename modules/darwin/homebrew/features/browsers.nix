@@ -10,8 +10,6 @@ in
       "floorp"
       # Chrome
       "google-chrome"
-      # Safari
-      "orion"
     ];
   };
 }

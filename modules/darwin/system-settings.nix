@@ -8,6 +8,9 @@
   system = {
     primaryUser = "${config.my.primaryUser}";
     defaults = {
+      NSGlobalDomain = {
+        "com.apple.swipescrolldirection" = false;
+      };
       dock = {
         autohide = true;
         orientation = "left";

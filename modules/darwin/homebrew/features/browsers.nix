@@ -7,7 +7,7 @@ in
   config = lib.mkIf cfg.enable {
     homebrew.casks = [
       # Firefox
-      "floorp"
+      "firefox@beta"
       # Chrome
       "google-chrome"
     ];
